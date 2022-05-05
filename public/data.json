@@ -1,4 +1,16 @@
 {
-  "imageUrl": "https://picsum.photos/200/300",
-  "message": "public image"
+  "App": {
+
+    "imageUrl": "https://picsum.photos/200/300",
+    "imageUrlLocal": "http://localhost:3001/img/mediamanagement.png",
+    "message": "public image"
+  },
+  "Home": {
+    "imageUrl_1": "https://picsum.photos/200/300",
+    "imageUrlLocal_1": "http://localhost:3001/img/mediamanagement.png",
+    "message_1": "public image"
+  },
+  "Resourrce":{
+    
+  }
 }
