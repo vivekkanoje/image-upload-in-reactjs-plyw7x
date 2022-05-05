@@ -48,7 +48,9 @@ class App extends Component {
           {imageUrl && (
             <img src={imageUrl} height="100" width="100" />
           )}
-      
+          {imageUrlLocal && (
+            <img src={imageUrlLocal} height="100" width="100" />
+          )}
         </div>
        
       </>
