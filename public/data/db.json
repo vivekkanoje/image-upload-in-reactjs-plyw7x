@@ -1,0 +1,27 @@
+{
+  "App": [
+    {
+      "id": 1,
+      "imageUrl": "https://picsum.photos/200/300",
+      "imageUrlLocal": "http://localhost:3001/img/mediamanagement.png",
+      "message": "public image"
+    },
+    {
+      "imageUrl": "https://picsum.photos/800/800",
+      "imageUrlLocal": "http://localhost:3001/img/image-ele.jpg",
+      "message": "New Add image",
+      "id": 2
+    }
+  ],
+  "Home": [
+    {
+      "id": 1,
+      "imageUrl_1": "https://picsum.photos/200/300",
+      "imageUrlLocal_1": "http://localhost:3001/img/mediamanagement.png",
+      "message_1": "Home image"
+    }
+  ],
+  "Resourrce": [
+    {}
+  ]
+}
