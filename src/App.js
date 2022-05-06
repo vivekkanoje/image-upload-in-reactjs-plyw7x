@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       imageUrl: null, 
       imageUrlLocal: null, 
-      message: null
+      message: null,
+      menu: []
     };
   }
 
@@ -70,16 +71,66 @@ class App extends Component {
     }).then();
   }
 
+  getMenu = () => {
+    fetch(BASE_URL + '/Menu')
+      .then(res => res.json())
+      .then(menu => {
+        console.log('getMenu', menu);
+        this.setState({
+          menu
+        })
+      })
+  }
+
   render() {
-    const { imageUrl, imageUrlLocal, message } = this.state;
+    const { imageUrl, imageUrlLocal, message, menu } = this.state;
+
     return (
       <>
         <div className="App">
-         
+          
+  
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+              <a className="navbar-brand" href="#">Navbar</a>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                {
+                  menu.map(m => (
+                  <>   
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {m.text}
+                      </a>
+                      <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                          {m.childItem.map(c => (
+                            <>
+                              <li><a className="dropdown-item" href={c.url}>{c.text}</a></li>
+                              <li><hr className="dropdown-divider" /></li>
+                            </>
+                          ))}
+                      </ul>
+                    </li>
+                  </>
+                  ))
+                }
+                </ul>
+                <form className="d-flex">
+                  <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                  <button className="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          
           <button onClick={this.getImage} >Get Image</button>
           <button onClick={this.addImage} >Add Image</button>
           <button onClick={this.ubdateImage} >Put Image</button>
           <button onClick={this.deleteImage} >Delete Image</button>
+          <button onClick={this.getMenu} >Load Menu</button>
           {
             message && (
               <p>{message}</p>

@@ -23,5 +23,69 @@
   ],
   "Resourrce": [
     {}
-  ]
+  ],
+  "Menu": [
+      {
+        "id": 1,
+        "text": "Products",
+        "url": null,
+        "childItem": [
+            {
+                "id": 1,
+                "text": "Face recognition",
+                "url": "/face-recognition"
+            },
+            {
+                "id": 2,
+                "text": "Object Recognition",
+                "url": "/object-recognition"
+            }
+        ]
+      },
+      {
+        "id":2,
+        "text": "Covid-19",
+        "url": null,
+        "childItem" : [
+            {
+                "id": 1,
+                "text": "Covid-19 Sheild",
+                "url": "/covid19-sheild"
+            }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "Solutions",
+        "url": null,
+        "childItem":[
+            {
+                "id": 1,
+                "text": "Covid-19 Sheild",
+                "url": "/covid19-sheild"
+            },
+            {
+                "id": 2,
+                "text": "Covid-19 Sheild",
+                "url": "/covid19-sheild"
+            }, 
+            {
+                "id": 3,
+                "text": "Covid-19 Sheild",
+                "url": "/covid19-sheild"
+            },
+            {
+                "id": 4,
+                "text": "Covid-19 Sheild",
+                "url": "/covid19-sheild"
+            },
+            {
+                "id": 5,
+                "text": "Covid-19 Sheild",
+                "url": "/covid19-sheild"
+            }
+        ]
+      }
+    ]
+    
 }
