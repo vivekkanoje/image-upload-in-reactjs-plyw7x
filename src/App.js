@@ -100,21 +100,35 @@ class App extends Component {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 {
                   menu.map(m => (
-                  <>   
-                    <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {m.text}
-                      </a>
-                      <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                          {m.childItem.map(c => (
-                            <>
-                              <li><a className="dropdown-item" href={c.url}>{c.text}</a></li>
-                              <li><hr className="dropdown-divider" /></li>
-                            </>
-                          ))}
-                      </ul>
-                    </li>
-                  </>
+                    <>
+                    {
+                      m.url == null &&
+                      <>   
+                        <li className="nav-item dropdown">
+                          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {m.text}
+                          </a>
+                          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                              {m.childItem.map(c => (
+                                <>
+                                  <li><a className="dropdown-item" href={c.url}>{c.text}</a></li>
+                                  <li><hr className="dropdown-divider" /></li>
+                                </>
+                              ))}
+                          </ul>
+                        </li>
+                      </>
+
+                    }
+                    {
+                      m.url != null &&
+                      <>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href={m.url}>{m.text}</a>
+                        </li>
+                      </>
+                    }
+                    </>
                   ))
                 }
                 </ul>
